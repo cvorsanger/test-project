@@ -1,0 +1,25 @@
+.speech-bubble {
+  position: relative; /* Important for positioning the pseudo-element */
+  background-color: #f0f0f0; /* Light gray background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 15px; /* Spacing inside the bubble */
+  margin: 5px; /* Spacing around the bubble */
+  max-width: 250px; /* Limit the width */
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #f0f0f0;
+  bottom: -10px;
+  left: 20px;
+}
+
+.speech-bubble[hidden] {
+  visibility: hidden; /* Hides content but preserves space */
+  display: block !important; /* Overrides default display: none */
+}
